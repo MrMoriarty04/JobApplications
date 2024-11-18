@@ -149,7 +149,7 @@ def data_form():
                     Workbook.save(filepath)
                     print("Done!")
                     try:
-                        workbook = openpyxl.load_workbook("/home/sherlock/Documents/Python/DATA.xlsx")
+                        workbook = openpyxl.load_workbook("/home/sherlock/GitHub/JobApplication/JobApplications/Python/Unprocessed_Data.xlsx")
                         sheet = workbook.active  
                         print("Excel file loaded successfully!")
                         # Access and process data here (replace with your logic)
@@ -417,7 +417,7 @@ def data_show():
 
 
 
-    file="DATA.xlsx"
+    file="/home/sherlock/GitHub/JobApplication/JobApplications/Python/Unprocessed_Data.xlsx"
     D1filepath=file
     person_list = [] 
 
@@ -440,7 +440,7 @@ def data_show():
         person= Person(fname, mname, lname, birthDate,gender,id,specialization, gpa,phone, email)
         person_list.append(person)
         person_df = pd.DataFrame([p.__dict__ for p in person_list]) 
-        new_file = "DATA2.xlsx"
+        new_file = "/home/sherlock/GitHub/JobApplication/JobApplications/Python/Processed_Data.xlsx"
         person_df.to_excel(new_file, index=False)
         print("Person objects stored in", new_file)
     GUINew(new_file)
